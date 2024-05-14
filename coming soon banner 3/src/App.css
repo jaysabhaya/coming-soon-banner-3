@@ -9,7 +9,7 @@
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .container .social-decoration {
@@ -59,12 +59,15 @@
   height: 45px;
   border-radius: 10px;
   border: 2px solid #ffffff78;
+  outline: none;
   padding-left: 12px;
   border-color: #ffffff78;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 400;
   background-color: #ffffff15;
+  color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 .email-input::placeholder {
@@ -85,11 +88,14 @@
   border: none;
   border-radius: 12px;
   outline: none;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 
@@ -158,34 +164,29 @@
 }
 
 .social-icons {
-  display: flex;
+  display: inline-block;
   justify-content: center;
-  gap: 10px;
-  width: 60px;
-  height: 45px;
-  padding: 12px;
-  outline: none;
   align-items: center;
+  width: 65px;
+  height: 50px;
+  margin-right: 5px;
+  outline: none;
   font-size: 24px;
-  transition: all 0.3s ease 0s;
   border-radius: 50px 0 0 50px;
+  transition: all 0.3s ease;
   border: none;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   background-color: white;
   color: black;
 }
 
-.social-decoration .social-icons svg:hover {
-  transform: translateY(0);
+.social-icons:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.social-decoration :hover {
-  align-items: center;
-  text-align: center;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 20px rgb(112, 212, 251);
+.social-icons:hover+.social-icons,
+.social-icons:hover~.social-icons {
+  transform: scale(0.9);
 }
 
 /* Loading.css */
@@ -195,16 +196,16 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: black;
+  background-color: #050505;
 }
 
 .loader {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../src/giphy.gif');
-  width: 250px;
-  height: 250px;
+  background-image: url('../src/assets/giphy.gif');
+  width: 500px;
+  height: 500px;
 }
 
 
@@ -245,11 +246,14 @@
     border-radius: 10px;
     border: 2px solid #ffffff78;
     padding-left: 25px;
+    outline: none;
     border-color: #ffffff78;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 400;
     background-color: #ffffff15;
+    color: white;
+    font-family: 'Inter', sans-serif;
   }
 
   .email-input::placeholder {

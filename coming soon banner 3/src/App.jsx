@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 function App() {
   const [loading, setLoading] = useState(true);
   const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(24); // Start from 24 hours
+  const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
@@ -16,10 +16,23 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 4000);
   }, []);
 
   useEffect(() => {
+    const calculateTimeRemaining = () => {
+      const now = new Date();
+      const hoursRemaining = 24 - now.getHours() - 1; // Remaining hours until the next 24-hour mark
+      const minutesRemaining = 59 - now.getMinutes(); // Remaining minutes until the next hour
+      const secondsRemaining = 59 - now.getSeconds(); // Remaining seconds until the next minute
+
+      setHours(hoursRemaining);
+      setMinutes(minutesRemaining);
+      setSeconds(secondsRemaining);
+    };
+
+    calculateTimeRemaining();
+
     let interval;
 
     if (timerActive) {
@@ -47,11 +60,8 @@ function App() {
     setTimerActive(true);
   };
 
-  const handleReset = () => {
-    setHours(24);
-    setMinutes(0);
-    setSeconds(0);
-    setTimerActive(false);
+  const formatTime = (time) => {
+    return time < 10 ? `0${time}` : time;
   };
 
   const handleClick = (platform) => {
@@ -103,28 +113,28 @@ function App() {
             <div class="timer-container">
               <div class="countdown-container">
                 <div class="countdown">
-                  <p>{`${days}`}</p>
+                  <p>{`${formatTime(days)}`}</p>
                 </div>
                 <div class="timer-bg" ><img src="../src/assets/timer_bg.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
-                  <p>{`${hours}`}</p>
+                  <p>{`${formatTime(hours)}`}</p>
                 </div>
                 <div class="timer-bg" ><img src="../src/assets/timer_bg.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
-                  <p>{`${minutes}`}</p>
+                  <p>{`${formatTime(minutes)}`}</p>
                 </div>
                 <div class="timer-bg" ><img src="../src/assets/timer_bg.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
-                  <p>{`${seconds}`}</p>
+                  <p>{`${formatTime(seconds)}`}</p>
                 </div>
                 <div class="timer-bg" ><img src="../src/assets/timer_bg.png" alt="" /> </div>
               </div>
@@ -143,7 +153,7 @@ function App() {
             </div>
             {!isTablateOrMobile ? <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future product<br />
               or service.We’re working hard to give you the best experience!</h3> : Mobile ? <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future product or service.We’re working hard to give you the best experience!</h3> : <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future<br />product or service.We’re working hard to give you the best experience!</h3>}
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '17px', marginBottom: Mobile ? '130px' : '110px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '17px', marginBottom: Mobile ? '220px' : '110px' }}>
               <input type='text' className="email-input" placeholder="Email Address" />
               <button className="button">Notify Me</button>
             </div>
@@ -163,13 +173,12 @@ function App() {
             }}
             viewport={{ once: true }}
           >
-            <SocialButton platform="facebook" onClick={handleClick} />
             <SocialButton platform="instagram" onClick={handleClick} />
+            <SocialButton platform="facebook" onClick={handleClick} />
             <SocialButton platform="twitter" onClick={handleClick} />
             <SocialButton platform="linkedin" onClick={handleClick} />
           </motion.div>
         </motion.section>
-
       )
       }
     </div >
