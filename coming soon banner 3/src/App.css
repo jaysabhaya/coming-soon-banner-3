@@ -342,7 +342,7 @@
     align-items: center;
     justify-content: center;
     background-image: url('../src/assets/bg.png');
-    background-size: 100% 120%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: #fff;
   }
@@ -363,6 +363,126 @@
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     background-color: white;
     color: black;
+  }
+}
 
+@media (min-width: 900px) and (max-height: 780px) {
+
+  .clock_content h1 {
+    font-size: 100px;
+    margin-bottom: 12px;
+  }
+
+  .clock_content h2 {
+    font-size: 56px;
+    margin-bottom: 40px;
+  }
+
+  .container .social-decoration {
+    right: 0%;
+    bottom: 35px;
+  }
+
+  .clock_content h3 {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+  .email-input {
+    width: 374px;
+    height: 70px;
+    font-size: 18px;
+  }
+
+  .email-input::placeholder {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .button {
+    width: 200px;
+    height: 70px;
+    font-size: 18px;
+  }
+
+  .button:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+
+  .timer-container {
+    display: flex;
+  }
+
+  .countdown-container {
+    height: 90px;
+    width: 90px;
+    margin-bottom: 12px;
+    font-size: 34px;
+  }
+
+  .countdown-container .countdown {
+    height: 90px;
+    width: 90px;
+  }
+
+  .countdown-container .timer-bg {
+    position: absolute;
+    top: 0;
+    left: -2px;
+  }
+
+  .countdown-container .timer-bg img {
+    width: 90px;
+    position: absolute;
+    top: -2px;
+  }
+
+  .timer-container .dots {
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .timer-container .timer-text {
+    width: 130px;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .container {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../src/assets/bg780.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: #fff;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 70px;
+    height: 55px;
+    padding: 12px;
+    outline: none;
+    align-items: center;
+    font-size: 25px;
+    transition: all 0.3s ease 0s;
+    border-radius: 50px 0 0 50px;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: black;
   }
 }
