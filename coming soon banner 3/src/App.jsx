@@ -115,28 +115,28 @@ function App() {
                 <div class="countdown">
                   <p>{`${formatTime(days)}`}</p>
                 </div>
-                <div class="timer-bg" ><img src="../src/assets/bg_count_timer.png" alt="" /> </div>
+                <div class="timer-bg" ><img src="../public/img/bg_count_timer.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
                   <p>{`${formatTime(hours)}`}</p>
                 </div>
-                <div class="timer-bg" ><img src="../src/assets/bg_count_timer.png" alt="" /> </div>
+                <div class="timer-bg" ><img src="../public/img/bg_count_timer.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
                   <p>{`${formatTime(minutes)}`}</p>
                 </div>
-                <div class="timer-bg" ><img src="../src/assets/bg_count_timer.png" alt="" /> </div>
+                <div class="timer-bg" ><img src="../public/img/bg_count_timer.png" alt="" /> </div>
               </div>
               <div className='dots' >{':'}</div>
               <div class="countdown-container">
                 <div class="countdown">
                   <p>{`${formatTime(seconds)}`}</p>
                 </div>
-                <div class="timer-bg" ><img src="../src/assets/bg_count_timer.png" alt="" /> </div>
+                <div class="timer-bg" ><img src="../public/img/bg_count_timer.png" alt="" /> </div>
               </div>
             </div>
             <div class="timer-container">
