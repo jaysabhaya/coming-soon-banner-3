@@ -1,12 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebookF, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
+import instagramImage from '../assets/instagram.png';
+
 
 const SocialButton = ({ platform, onClick }) => {
     let icon;
     switch (platform) {
         case 'instagram':
-            icon = <FontAwesomeIcon icon={faInstagram} />;
+            icon = <img src={instagramImage} alt="Instagram" style={{ height: "22px" }} />;
             break;
         case 'facebook':
             icon = <FontAwesomeIcon icon={faFacebookF} />;

@@ -22,9 +22,9 @@ function App() {
   useEffect(() => {
     const calculateTimeRemaining = () => {
       const now = new Date();
-      const hoursRemaining = 24 - now.getHours() - 1; // Remaining hours until the next 24-hour mark
-      const minutesRemaining = 59 - now.getMinutes(); // Remaining minutes until the next hour
-      const secondsRemaining = 59 - now.getSeconds(); // Remaining seconds until the next minute
+      const hoursRemaining = 24 - now.getHours() - 1;
+      const minutesRemaining = 59 - now.getMinutes();
+      const secondsRemaining = 59 - now.getSeconds();
 
       setHours(hoursRemaining);
       setMinutes(minutesRemaining);
@@ -83,7 +83,7 @@ function App() {
     }
   };
 
-  const Mobile = useMediaQuery({ query: '(max-width: 430px)' });
+  const Mobile = useMediaQuery({ query: '(max-width: 450px)' });
   const isTablateOrMobile = useMediaQuery({ query: '(max-width: 900px)' });
 
   useEffect(() => {
@@ -144,7 +144,7 @@ function App() {
                 <p>{`Days`}</p>
               </div>
               <div class='timer-text' style={{ color: 'white' }}>
-                <p>{`Hour`}</p>
+                <p>{`Hours`}</p>
               </div> <div class='timer-text' style={{ color: 'white' }}>
                 <p>{`Minutes`}</p>
               </div> <div class='timer-text' style={{ color: 'white' }}>
@@ -152,7 +152,7 @@ function App() {
               </div>
             </div>
             {!isTablateOrMobile ? <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future product<br />
-              or service.We’re working hard to give you the best experience!</h3> : Mobile ? <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future product or service.We’re working hard to give you the best experience!</h3> : <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future<br />product or service.We’re working hard to give you the best experience!</h3>}
+              or service. We’re working hard to give you the best experience!</h3> : Mobile ? <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future product or service. We’re working hard to give you the best experience!</h3> : <h3 style={{ color: '#FFFFFF' }}>We’re coming soon! Awesome template to present your future<br />product or service.We’re working hard to give you the best experience!</h3>}
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '17px', marginBottom: Mobile ? '220px' : '110px' }}>
               <input type='text' className="email-input" placeholder="Email Address" />
               <button className="button">Notify Me</button>
